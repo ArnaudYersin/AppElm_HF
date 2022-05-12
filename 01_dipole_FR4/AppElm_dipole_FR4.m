@@ -12,7 +12,7 @@ BW_base = Sparam_base.Frequencies(max(F_BW)) - Sparam_base.Frequencies(min(F_BW)
 
 %% parameter sweep
 save = false;
-var_name = 'L';
+var_name = 'i';
 
 if strcmp(var_name,'i')
     var_base = 0.8;
@@ -104,11 +104,11 @@ grid
 %% Save
 if save
     saveas(f1,strcat(var_name,'_param/result/',antenna_name,'_S11_',var_name,'_param.fig'))
-    saveas(f1,strcat(var_name,'_param/result/',antenna_name,'_S11_',var_name,'_param.eps'))
+    saveas(f1,strcat(var_name,'_param/result/',antenna_name,'_S11_',var_name,'_param.eps'),'epsc')
     saveas(f2,strcat(var_name,'_param/result/',antenna_name,'_Fres_',var_name,'_param.fig'))
-    saveas(f2,strcat(var_name,'_param/result/',antenna_name,'_Fres_',var_name,'_param.eps'))
+    saveas(f2,strcat(var_name,'_param/result/',antenna_name,'_Fres_',var_name,'_param.eps'),'epsc')
     saveas(f3,strcat(var_name,'_param/result/',antenna_name,'_MinS11_',var_name,'_param.fig'))
-    saveas(f3,strcat(var_name,'_param/result/',antenna_name,'_MinS11_',var_name,'_param.eps'))
+    saveas(f3,strcat(var_name,'_param/result/',antenna_name,'_MinS11_',var_name,'_param.eps'),'epsc')
     saveas(f4,strcat(var_name,'_param/result/',antenna_name,'_BP_',var_name,'_param.fig'))
-    saveas(f4,strcat(var_name,'_param/result/',antenna_name,'_BP_',var_name,'_param.eps'))
+    saveas(f4,strcat(var_name,'_param/result/',antenna_name,'_BP_',var_name,'_param.eps'),'epsc')
 end
