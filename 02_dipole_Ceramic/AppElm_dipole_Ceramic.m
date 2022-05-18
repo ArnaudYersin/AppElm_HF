@@ -2,7 +2,7 @@ clc
 clear
 close all
 %%
-antenna_name = "AppElm_antenne_dipole_FR4";
+antenna_name = "AppElm_antenne_dipole_Alumina";
 Sparam_base = sparameters(strcat('_base/',antenna_name, '_correct.s1p'));
 [Fres_base, Smin_base] = find_F_res(Sparam_base, 1e9, 3e9);
 Sparam_complex = squeeze(Sparam_base.Parameters);
@@ -12,14 +12,14 @@ BW_base = Sparam_base.Frequencies(max(F_BW)) - Sparam_base.Frequencies(min(F_BW)
 
 %% parameter sweep
 save = false;
-var_name = 'i';
+var_name = 'ls';
 
 if strcmp(var_name,'i')
     var_base = 0.8;
 elseif strcmp(var_name,'l1')
-    var_base = 4;
+    var_base = 2;
 elseif strcmp(var_name,'L')
-    var_base = 38.8;
+    var_base = 33;
 elseif strcmp(var_name,'ws')
     var_base = 80;
 elseif strcmp(var_name,'ls')
