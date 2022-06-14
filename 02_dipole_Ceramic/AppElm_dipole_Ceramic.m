@@ -80,6 +80,9 @@ ylabel(strcat('\Delta', 'F_{rés}', ' [%]'))
 xlim([min(x_data),max(x_data)])
 grid
 
+Fres_5 = [y_data(5), y_data(7)]
+Fres_10 = [y_data(4), y_data(8)]
+Fres_25 = [y_data(1), y_data(11)]
 %% Minimum S11
 x_data = dvar/var_base*100;
 y_data = dSmin/Smin_base*100;
@@ -92,6 +95,9 @@ ylabel(strcat('\Delta', 'S11(F_{rés})', ' [%]'))
 xlim([min(x_data),max(x_data)])
 grid
 
+S11min_5 = [y_data(5), y_data(7)]
+S11min_10 = [y_data(4), y_data(8)]
+S11min_25 = [y_data(1), y_data(11)]
 %% Bande passante
 x_data = dvar/var_base*100;
 y_data = dBW/BW_base*100;
@@ -104,7 +110,9 @@ ylabel(strcat('\Delta', ' Bande Passante', ' [%]'))
 xlim([min(x_data),max(x_data)])
 grid
 
-
+BW_5 = [y_data(5), y_data(7)]
+BW_10 = [y_data(4), y_data(8)]
+BW_25 = [y_data(1), y_data(11)]
 %% Save
 if save
     saveas(f1,strcat(var_name,'_param/result/',antenna_name,'_S11_',var_name,'_param.fig'))
